@@ -2,20 +2,8 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const { v4: uuidv4 } = require('uuid');
-
+const users = require('./users')
 app.use(bodyParser.json());
-
-const users = [{
-    email: "abc@abc.ca",
-    firstName: "ABC",
-    id: "5abf6783"
-  },
-  {
-    email: "xyz@xyz.ca",
-    firstName: "XYZ",
-    id: "5abf674563"
-  }
-];
 
 // Existing GET API
 app.get('/users', (req, res, next) => {
